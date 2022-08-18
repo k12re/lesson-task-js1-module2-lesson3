@@ -8,18 +8,13 @@ btn.addEventListener("click", function () {
 
 //Question 2
 
-const button = document.querySelector("button[type='button']");
-let count = document.querySelector(".count");
+const button = document.querySelector("form button");
+let countOutput = document.querySelector("b.count");
 const input = document.querySelector("input");
 
-button.addEventListener("click", function () {
-  console.log(event.target.value.length);
+function countCharacters() {
+  const characterCount = input.value.trim().length;
+  countOutput.innerHTML = characterCount;
+}
 
-  input.onkeyup = function () {
-    console.log(event.target.value.length);
-
-    let length = event.target.value.length;
-
-    count.innerHTML = length;
-  };
-});
+button.addEventListener("click", countCharacters);
